@@ -33,6 +33,15 @@ def _(mo):
     2. `get_price(menu, item)` — look up one item's price (`if` / `else`; unknown items return `0.0`)
     3. `take_order()` — a **while loop** reads items until the user types `END`
     4. `calculate_total(menu, order)` — a **for loop** adds each price into a running total
+
+    **Bonus** (if you finish early) — a dictionary nested in a dictionary.
+    Outer keys are meal names (`breakfast`, `lunch`). Inner keys are items; inner values are prices.
+
+    5. `print_full_menu(full_menu)` — a **for loop inside a for loop**: print each meal, then each item and price
+    6. `get_nested_price(full_menu, item)` — loop through each meal; if the item is there, return its price (unknown items return `0.0`)
+    7. `calculate_nested_total(full_menu, order)` — same idea as task 4, but use `get_nested_price`
+
+    To order from both menus, change the last cell to use `full_menu` and the bonus functions.
     """)
     return
 
@@ -71,6 +80,44 @@ def take_order():
 @app.function
 # Task 4 — look up each item's price, then total them
 def calculate_total(menu, order):
+    return 0.0
+
+
+@app.cell
+def _():
+    # BONUS — a dictionary of dictionaries (meal -> item -> price)
+    full_menu = {
+        "breakfast": {
+            "latte": 4.50,
+            "muffin": 3.00,
+            "drip coffee": 2.25,
+            "bagel": 2.50,
+        },
+        "lunch": {
+            "sandwich": 8.00,
+            "soup": 5.50,
+            "salad": 7.25,
+            "chips": 1.75,
+        },
+    }
+    return (full_menu,)
+
+
+@app.function
+# Bonus 5 — loop through each meal, then each item in that meal (nested for loops)
+def print_full_menu(full_menu):
+    return
+
+
+@app.function
+# Bonus 6 — look in each meal dictionary for the item; unknown items return 0.0
+def get_nested_price(full_menu, item):
+    return 0.0
+
+
+@app.function
+# Bonus 7 — look up each item's price from the nested menu, then total them
+def calculate_nested_total(full_menu, order):
     return 0.0
 
 
